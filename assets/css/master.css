@@ -183,3 +183,34 @@ input:focus,
   height: 100%;
   align-items: flex-start;
 }
+
+.content {
+  flex-direction: column;
+  padding: 50px 100px;
+}
+
+.box {
+  padding: 20px 10px;
+  width: 300px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.recived {
+  background-color: #fff;
+  margin-right: auto;
+}
+
+.sent {
+  margin-left: auto;
+  background-color: #d5f9bb;
+}
+
+.side-right > .nav > .avatar > img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.avatar-text {
+  padding-left: 10px;
+}
