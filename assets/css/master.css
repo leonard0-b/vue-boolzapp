@@ -5,6 +5,10 @@
   list-style: none;
 }
 
+i {
+  cursor: pointer;
+}
+
 /* utilities */
 .flex {
   display: flex;
@@ -22,7 +26,6 @@
   font-weight: bold;
 }
 /* /utilities */
-
 body {
   justify-content: center;
   align-items: center;
@@ -85,6 +88,7 @@ body {
 .content {
   height: calc(100% - 16%);
   background-image: url(../img/mine.jpg);
+  overflow-y: scroll;
 }
 
 .message-area {
