@@ -155,3 +155,29 @@ input:focus,
 .search button:focus {
   outline: none;
 }
+
+.msg-area {
+  height: 100%;
+}
+
+.msg {
+  padding: 10px 10px;
+  height: 10%;
+  border-bottom: 1px solid #eaeaea;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.msg > .left > .msg-text {
+  padding-left: 15px;
+}
+
+.msg > .left > img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.msg-area > .msg > .right {
+  height: 100%;
+  align-items: flex-start;
+}
