@@ -190,15 +190,24 @@ input:focus,
 }
 
 .box {
-  padding: 20px 10px;
+  padding: 18px 10px;
   width: 300px;
   border-radius: 10px;
   margin-bottom: 10px;
+  position: relative;
 }
 
 .recived {
   background-color: #fff;
   margin-right: auto;
+}
+
+.box > span {
+  color: #778899;
+  font-size: 10px;
+  position: absolute;
+  bottom: 3px;
+  right: 5px;
 }
 
 .sent {
