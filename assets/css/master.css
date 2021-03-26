@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to bottom, #039789 20%, #d9dcd5 20%);
+}
+
+.flex {
+  display: flex;
+}
+
+#root {
+  width: 85%;
+  height: 95%;
+  background-color: lightblue;
+}
+
+.side-left {
+  background-color: white;
+  height: 100%;
+  width: 35%;
+}
+
+.side-right {
+  background-color: purple;
+  height: 100%;
+  width: 65%;
+}
