@@ -30,15 +30,45 @@ body {
 }
 
 .side-right {
-  background-color: purple;
   height: 100%;
   width: 65%;
+  flex-direction: column;
 }
 
 .nav {
   height: 8%;
-  background-color: yellow;
-  border: 1px solid black;
+  background-color: #eaeaea;
+  border: 1px solid #b1b1b1;
+}
+
+.side-left > .nav {
+  border-right: 0;
+}
+
+.content {
+  height: calc(100% - 16%);
+  background-image: url(../img/mine.jpg);
+}
+
+.message-area {
+  background-color: #eaeaea;
+  height: 8%;
+  border-left: 1px solid #b1b1b1;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.message-area > input {
+  padding-left: 10px;
+  width: 80%;
+  height: 70%;
+  border-radius: 8px;
+  border: 1px solid #cfd2d7;
+}
+
+
+.message-area i {
+  font-size: 20px;
 }
 
 .notifiche {
@@ -49,6 +79,7 @@ body {
 
 .search {
   padding: 10px;
+  background-color: #f8f8f8;
 }
 
 .search input {
@@ -58,6 +89,7 @@ body {
 }
 
 .search button {
+  cursor: pointer;
   background-color: #fff;
   color: #cfd2d7;
   padding: 5px 25px;
@@ -65,7 +97,7 @@ body {
   border-right: 0;
 }
 
-.search input:focus,
+input:focus,
 .search button:focus {
   outline: none;
 }
