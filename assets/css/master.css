@@ -191,6 +191,7 @@ input:focus,
 
 .box {
   padding: 18px 10px;
+  padding-top: 10px;
   width: 300px;
   border-radius: 10px;
   margin-bottom: 10px;
