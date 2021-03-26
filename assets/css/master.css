@@ -33,6 +33,7 @@ body {
   height: 100vh;
   width: 100vw;
   background: linear-gradient(to bottom, #039789 15%, #d9dcd5 15%);
+  overflow: hidden;
 }
 
 #root {
