@@ -10,7 +10,7 @@ body {
   align-items: center;
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(to bottom, #039789 20%, #d9dcd5 20%);
+  background: linear-gradient(to bottom, #039789 15%, #d9dcd5 15%);
 }
 
 .flex {
@@ -33,4 +33,39 @@ body {
   background-color: purple;
   height: 100%;
   width: 65%;
+}
+
+.nav {
+  height: 8%;
+  background-color: yellow;
+  border: 1px solid black;
+}
+
+.notifiche {
+  color: #000;
+  height: 10%;
+  background-color: #8edafc;
+}
+
+.search {
+  padding: 10px;
+}
+
+.search input {
+  width: 100%;
+  padding-left: 10px;
+  border: 1px solid #cfd2d7;
+}
+
+.search button {
+  background-color: #fff;
+  color: #cfd2d7;
+  padding: 5px 25px;
+  border: 1px solid #cfd2d7;
+  border-right: 0;
+}
+
+.search input:focus,
+.search button:focus {
+  outline: none;
 }
