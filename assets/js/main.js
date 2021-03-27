@@ -1,6 +1,7 @@
 var app = new Vue ({
   el: "#root",
     data: {
+      inputTxt: "",
       contacts: [
       	{
       		name: 'Michele',

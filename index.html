@@ -40,7 +40,7 @@
             <img :src="'./assets/img/avatar' + info.avatar + '.jpg'" alt="">
             <div class="msg-text">
               <p class="bold">{{ info.name }}</p>
-              <p  v-for="message in contacts.messages"class="grey">{{message.text}}</p>
+              <p  v-for="message in contacts.messages"class="grey"></p>
             </div>
           </div>
           <div class="right">
@@ -80,9 +80,9 @@
       </div>
       <div class="message-area flex">
         <i class="far fa-smile-wink"></i>
-        <input type="text" placeholder="Scrivi un messaggio">
-        <i class="fas fa-microphone"></i>
-        <i class="fas fa-paper-plane"></i>
+        <input type="text" v-model="inputTxt" placeholder="Scrivi un messaggio">
+        <i v-if="inputTxt == ''" class="fas fa-microphone"></i>
+        <i v-if="inputTxt != ''" class="fas fa-paper-plane"></i>
       </div>
     </div>
   </div>
