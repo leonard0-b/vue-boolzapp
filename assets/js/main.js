@@ -1,5 +1,5 @@
 var app = new Vue ({
-  el: "root",
+  el: "#root",
     data: {
       contacts: [
       	{
@@ -70,7 +70,7 @@ var app = new Vue ({
       	},
       	{
       		name: 'Luisa',
-      		avatar: '_4',
+      		avatar: '_6',
       		visible: true,
       		messages: [
       			{

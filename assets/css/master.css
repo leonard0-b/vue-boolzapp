@@ -58,7 +58,7 @@ body {
   padding: 10px;
   height: 8%;
   background-color: #eaeaea;
-  border: 1px solid #b1b1b1;
+  border: 1px solid #d3d3d3;
   align-items: center;
   justify-content: space-between;
 }
@@ -96,7 +96,7 @@ body {
 .message-area {
   background-color: #eaeaea;
   height: 8%;
-  border-left: 1px solid #b1b1b1;
+  border-left: 1px solid #d3d3d3;
   align-items: center;
   justify-content: space-around;
 }
@@ -134,6 +134,7 @@ body {
 }
 
 .search {
+  height: 5%;
   padding: 10px;
   background-color: #f8f8f8;
 }
@@ -159,7 +160,7 @@ input:focus,
 }
 
 .msg-area {
-  height: 100%;
+  height: calc(100% - 23%);
 }
 
 .msg {

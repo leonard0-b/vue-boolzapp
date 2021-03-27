@@ -35,12 +35,12 @@
         <input type="text" placeholder="Cerca o inizia una nuova chat">
       </div>
       <div class="msg-area">
-        <div class="msg flex">
+        <div v-for="info in contacts" class="msg flex">
           <div class="left flex">
-            <img src="" alt="">
+            <img :src="'./assets/img/avatar' + info.avatar + '.jpg'" alt="">
             <div class="msg-text">
-              <p class="bold"></p>
-              <p class="grey"></p>
+              <p class="bold">{{ info.name }}</p>
+              <p  v-for="message in contacts.messages"class="grey">{{message.text}}</p>
             </div>
           </div>
           <div class="right">
@@ -52,7 +52,7 @@
     <div class="side-right flex">
       <div class="nav flex">
         <div class="avatar flex">
-          <img src="./assets/img/avatar_2.jpg" alt="avatar">
+          <img src="./assets/img/avatar_1.jpg" alt="avatar">
           <div class="avatar-text">
             <p class="bold">Michele</p>
             <p class="grey">Ultimo accesso oggi alle ore 10/01/2020 16:15:22</p>
@@ -82,7 +82,7 @@
         <i class="far fa-smile-wink"></i>
         <input type="text" placeholder="Scrivi un messaggio">
         <i class="fas fa-microphone"></i>
-        <i class="fas fa-paper-plane" style="display: none"></i>
+        <i class="fas fa-paper-plane"></i>
       </div>
     </div>
   </div>
