@@ -201,7 +201,23 @@ input:focus,
   position: relative;
 }
 
-.recived {
+.fa-angle-down {
+  cursor: pointer;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  color: #778899;
+}
+
+.fa-angle-down {
+  display: none;
+}
+
+.box:hover > i {
+  display: block;
+}
+
+.received {
   background-color: #fff;
   margin-right: auto;
 }

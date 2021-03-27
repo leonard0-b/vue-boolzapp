@@ -65,17 +65,10 @@
         </div>
       </div>
       <div class="content flex">
-        <div class="box sent">
-          <p>Hai portato a spasso il cane?</p>
-          <span>10/01/2020 15:30:55</span>
-        </div>
-        <div class="box sent">
-          <p>Come sta?</p>
-          <span>10/01/2020 15:30:55</span>
-        </div>
-        <div class="box recived">
-          <p>Tutto fatto!</p>
-          <span>10/01/2020 15:30:55</span>
+        <div class="box" :class="(contacts[0].messages[i].status == 'received') ? 'received' : 'sent'" v-for="(messaggio, i) in contacts[0].messages">
+          <i class="fas fa-angle-down"></i>
+          <p>{{ contacts[0].messages[i].text }}</p>
+          <span></span>
         </div>
       </div>
       <div class="message-area flex">
