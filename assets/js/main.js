@@ -93,6 +93,15 @@ var app = new Vue ({
     cambiaConv: function (i) {
       this.indexChat = i;
       console.log(this.cambiaConv);
+    },
+    sendMsg: function () {
+      let obj = {
+        text: this.inputTxt,
+        status:"sent",
+        date: dayjs().format('DD/MM/YYYY hh:mm')
+      }
+      this.contacts[this.indexChat].messages.push(obj);
+      this.inputTxt = ""
     }
-  },
+  }
 })
