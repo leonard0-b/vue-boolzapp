@@ -171,6 +171,19 @@ input:focus,
   border-bottom: 1px solid #eaeaea;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
+}
+
+.active {
+  background-color: #eaeaea;
+}
+
+.msg:hover {
+  background-color: #f5f5f5;
+}
+
+.msg.active:hover {
+  background-color: #eaeaea;
 }
 
 .msg > .left > .msg-text {

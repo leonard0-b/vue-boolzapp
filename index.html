@@ -41,7 +41,7 @@
       </div>
       <!-- lista contatti -->
       <div class="msg-area">
-        <div class="msg flex" v-for="info in contacts">
+        <div class="msg flex" :class="(i == indexChat) ? 'active' : ''" v-for="(info, i) in contacts" @click="cambiaConv(i)">
           <div class="left flex">
             <img :src="'./assets/img/avatar' + info.avatar + '.jpg'" :alt="info.name">
             <div class="msg-text">
@@ -60,9 +60,9 @@
       <!-- nav-right -->
       <div class="nav flex">
         <div class="avatar flex">
-          <img src="./assets/img/avatar_1.jpg" alt="avatar">
+          <img :src="'./assets/img/avatar' + contacts[indexChat].avatar + '.jpg'">
           <div class="avatar-text">
-            <p class="bold">Michele</p>
+            <p class="bold">{{contacts[indexChat].name}}</p>
             <p class="grey">Ultimo accesso oggi alle ore 10/01/2020 16:15:22</p>
           </div>
         </div>
@@ -74,10 +74,10 @@
       </div>
       <!-- area messaggi -->
       <div class="content flex">
-        <div class="box" :class="(contacts[0].messages[i].status == 'received') ? 'received' : 'sent'" v-for="(messaggio, i) in contacts[0].messages">
+        <div class="box" :class="(contacts[indexChat].messages[i].status == 'received') ? 'received' : 'sent'" v-for="(messaggio, i) in contacts[indexChat].messages">
           <i class="fas fa-angle-down"></i>
-          <p>{{ contacts[0].messages[i].text }}</p>
-          <span>{{ contacts[0].messages[i].date }}</span>
+          <p>{{ contacts[indexChat].messages[i].text }}</p>
+          <span>{{ contacts[indexChat].messages[i].date }}</span>
           <ul>
             <li>Message Info</li>
             <li>Delete Message</li>

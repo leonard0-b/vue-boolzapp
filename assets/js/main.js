@@ -1,6 +1,7 @@
 var app = new Vue ({
   el: "#root",
     data: {
+      indexChat: 0,
       inputTxt: "",
       contacts: [
       	{
@@ -87,5 +88,11 @@ var app = new Vue ({
       		],
       	},
       ]
+    },
+  methods: {
+    cambiaConv: function (i) {
+      this.indexChat = i;
+      console.log(this.cambiaConv);
     }
+  },
 })
