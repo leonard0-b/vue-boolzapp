@@ -102,6 +102,14 @@ var app = new Vue ({
       }
       this.contacts[this.indexChat].messages.push(obj);
       this.inputTxt = ""
-    }
+      setTimeout(() => {
+        let obj2 = {
+          text: "Va bene!",
+          status:"received",
+          date: dayjs().format('DD/MM/YYYY hh:mm')
+        }
+          this.contacts[this.indexChat].messages.push(obj2);
+      }, 3000);
+    },
   }
 })

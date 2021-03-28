@@ -250,12 +250,16 @@ input:focus,
   margin-right: auto;
 }
 
-.box > span {
+.box > .data > p {
   color: #778899;
   font-size: 10px;
   position: absolute;
   bottom: 3px;
   right: 5px;
+}
+
+.data {
+  margin-left: 10px;
 }
 
 .sent {
