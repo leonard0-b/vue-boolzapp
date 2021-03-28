@@ -88,5 +88,4 @@ var app = new Vue ({
       	},
       ]
     }
-
 })

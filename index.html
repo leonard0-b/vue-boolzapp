@@ -7,11 +7,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">  <link rel="stylesheet" href="./assets/css/master.css">
+  <link rel="icon" href="./assets/img/icon.png" type="image/x-icon"/>
   <title>Boolzap</title>
 <head>
 <body class="flex">
   <div id="root" class="flex">
+    <!-- parte sinistra -->
     <div class="side-left">
+      <!-- nav-left -->
       <div class="nav flex">
         <div class="avatar flex">
           <img src="./assets/img/avatar_3.jpg" alt="avatar">
@@ -23,6 +26,7 @@
           <i class="fas fa-ellipsis-v"></i>
         </div>
       </div>
+      <!-- notidiche -->
       <div class="notifiche flex">
         <i class="fas fa-bell-slash"></i>
         <div class="notify-text">
@@ -30,14 +34,16 @@
           <a href="#" class="grey underline">Attiva le notifiche desktop</a>
         </div>
       </div>
+      <!-- cerca -->
       <div class="search flex">
         <button><i class="fas fa-search"></i></button>
         <input type="text" placeholder="Cerca o inizia una nuova chat">
       </div>
+      <!-- lista contatti -->
       <div class="msg-area">
-        <div v-for="info in contacts" class="msg flex">
+        <div class="msg flex" v-for="info in contacts">
           <div class="left flex">
-            <img :src="'./assets/img/avatar' + info.avatar + '.jpg'" alt="">
+            <img :src="'./assets/img/avatar' + info.avatar + '.jpg'" :alt="info.name">
             <div class="msg-text">
               <p class="bold">{{ info.name }}</p>
               <p  v-for="message in contacts.messages"class="grey"></p>
@@ -49,7 +55,9 @@
         </div>
       </div>
     </div>
+    <!-- prte destra -->
     <div class="side-right flex">
+      <!-- nav-right -->
       <div class="nav flex">
         <div class="avatar flex">
           <img src="./assets/img/avatar_1.jpg" alt="avatar">
@@ -64,13 +72,19 @@
           <i class="fas fa-ellipsis-v"></i>
         </div>
       </div>
+      <!-- area messaggi -->
       <div class="content flex">
         <div class="box" :class="(contacts[0].messages[i].status == 'received') ? 'received' : 'sent'" v-for="(messaggio, i) in contacts[0].messages">
           <i class="fas fa-angle-down"></i>
           <p>{{ contacts[0].messages[i].text }}</p>
-          <span></span>
+          <span>{{ contacts[0].messages[i].date }}</span>
+          <ul>
+            <li>Message Info</li>
+            <li>Delete Message</li>
+          </ul>
         </div>
       </div>
+      <!-- area invio messaggio -->
       <div class="message-area flex">
         <i class="far fa-smile-wink"></i>
         <input type="text" v-model="inputTxt" placeholder="Scrivi un messaggio">
