@@ -93,7 +93,7 @@
         <i class="far fa-smile-wink"></i>
         <input type="text" v-model="inputTxt" @keyup.enter="sendMsg" placeholder="Scrivi un messaggio">
         <i v-if="inputTxt == ''" class="fas fa-microphone"></i>
-        <i v-if="inputTxt != ''" class="fas fa-paper-plane"></i>
+        <i v-if="inputTxt != ''" class="fas fa-paper-plane" @click="sendMsg"></i>
       </div>
     </div>
   </div>
