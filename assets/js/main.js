@@ -118,6 +118,11 @@ var app = new Vue ({
       this.indexMsg = i;
       this.visible = !this.visible
       console.log(this.visible);
+    },
+    deleteMsg: function (i){
+      this.indexMsg = i;
+      this.contacts[this.indexChat].messages.splice(i, 1);
+      this.indexMsg = -1;
     }
   },
 })

@@ -83,7 +83,7 @@
           </div>
           <ul v-if="visible && i == indexMsg">
             <li>Message Info</li>
-            <li>Delete Message</li>
+            <li @click="deleteMsg(i)">Delete Message</li>
           </ul>
         </div>
       </div>
