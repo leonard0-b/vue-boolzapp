@@ -46,7 +46,8 @@
             <img :src="'./assets/img/avatar' + info.avatar + '.jpg'" :alt="info.name">
             <div class="msg-text">
               <p class="bold">{{ info.name }}</p>
-              <p  v-for="message in contacts.messages"class="grey"></p>
+              <p class="grey">{{info.messages[info.messages.length - 1].text}}</p>
+              <p class="grey">{{info.messages[info.messages.length - 1].date}}</p>
             </div>
           </div>
           <div class="right">
@@ -74,15 +75,13 @@
       </div>
       <!-- area messaggi -->
       <div class="content flex">
-        <div class="box" :class="(contacts[indexChat].messages[i].status == 'received') ? 'received' : 'sent'" v-for="(messaggio, i) in contacts[indexChat].messages">
-          <div class="testo-messaggio">
-            <i class="fas fa-angle-down"></i>
+        <div class="box flex" :class="(contacts[indexChat].messages[i].status == 'received') ? 'received' : 'sent'" v-for="(messaggio, i) in contacts[indexChat].messages">
+            <i class="fas fa-angle-down" @click="openMenu(i)"></i>
             <p>{{ contacts[indexChat].messages[i].text }}</p>
-          </div>
           <div class="data">
             <p>{{ contacts[indexChat].messages[i].date }}</p>
           </div>
-          <ul>
+          <ul v-if="visible && i == indexMsg">
             <li>Message Info</li>
             <li>Delete Message</li>
           </ul>

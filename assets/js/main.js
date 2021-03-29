@@ -4,6 +4,8 @@ var app = new Vue ({
       indexChat: 0,
       inputTxt: "",
       inputSearch: "",
+      indexMsg: -1,
+      visible: false,
       contacts: [
       	{
       		name: 'Michele',
@@ -112,6 +114,10 @@ var app = new Vue ({
           this.contacts[this.indexChat].messages.push(obj2);
       }, 3000);
     },
+    openMenu: function (i){
+      this.indexMsg = i;
+      this.visible = !this.visible
+      console.log(this.visible);
+    }
   },
-
 })

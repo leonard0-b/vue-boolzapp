@@ -221,9 +221,6 @@ input:focus,
   right: 5px;
   top: 5px;
   color: #778899;
-}
-
-.fa-angle-down {
   display: none;
 }
 
@@ -232,7 +229,8 @@ input:focus,
 }
 
 .box > ul {
-  display: none;
+  cursor: pointer;
+  display: block;
   z-index: 2;
   background-color: #fff;
   position: absolute;
@@ -243,6 +241,10 @@ input:focus,
 
 .box ul li {
   padding: 15px 25px;
+}
+
+.box ul li:hover {
+  background-color: #f5f5f5;
 }
 
 .received {
