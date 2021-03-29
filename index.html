@@ -17,8 +17,8 @@
       <!-- nav-left -->
       <div class="nav flex">
         <div class="avatar flex">
-          <img src="./assets/img/avatar_3.jpg" alt="avatar">
-          <span class="bold">Leonardo</span>
+          <img src="./assets/img/myavatar.png" alt="avatar">
+          <span class="bold white">Leonardo</span>
         </div>
         <div class="cmd">
           <i class="fas fa-circle-notch"></i>
@@ -30,8 +30,8 @@
       <div class="notifiche flex">
         <i class="fas fa-bell-slash"></i>
         <div class="notify-text">
-          <p>Ricevi notifiche di nuovi messaggi</p>
-          <a href="#" class="grey underline">Attiva le notifiche desktop</a>
+          <p class="white fs20">Ricevi notifiche di nuovi messaggi</p>
+          <a href="#" class="grey underline fs20">Attiva le notifiche desktop</a>
         </div>
       </div>
       <!-- cerca -->
@@ -45,8 +45,8 @@
           <div class="left flex">
             <img :src="'./assets/img/avatar' + info.avatar + '.jpg'" :alt="info.name">
             <div class="msg-text">
-              <p class="bold">{{ info.name }}</p>
-              <p class="grey">{{info.messages[info.messages.length - 1].text}}</p>
+              <p class="white bold fs20 marginb-8">{{ info.name }}</p>
+              <p class="grey fs18">{{info.messages[info.messages.length - 1].text}}</p>
             </div>
           </div>
           <div class="right">
@@ -62,7 +62,7 @@
         <div class="avatar flex">
           <img :src="'./assets/img/avatar' + contacts[indexChat].avatar + '.jpg'">
           <div class="avatar-text">
-            <p class="bold">{{contacts[indexChat].name}}</p>
+            <p class="bold white fs18">{{contacts[indexChat].name}}</p>
             <p class="grey">Ultimo accesso oggi alle ore 10/01/2020 16:15:22</p>
           </div>
         </div>
@@ -76,9 +76,9 @@
       <div class="content flex">
         <div class="box flex" :class="(contacts[indexChat].messages[i].status == 'received') ? 'received' : 'sent'" v-for="(messaggio, i) in contacts[indexChat].messages">
             <i class="fas fa-angle-down" @click="openMenu(i)"></i>
-            <p>{{ contacts[indexChat].messages[i].text }}</p>
+            <p class="white fs18">{{ contacts[indexChat].messages[i].text }}</p>
           <div class="data">
-            <p>{{ contacts[indexChat].messages[i].date }}</p>
+            <p class="grey">{{ contacts[indexChat].messages[i].date }}</p>
           </div>
           <ul v-if="visible && i == indexMsg">
             <li>Message Info</li>
