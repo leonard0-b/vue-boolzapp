@@ -3,6 +3,7 @@ var app = new Vue ({
     data: {
       indexChat: 0,
       inputTxt: "",
+      inputSearch: "",
       contacts: [
       	{
       		name: 'Michele',
@@ -98,7 +99,7 @@ var app = new Vue ({
       let obj = {
         text: this.inputTxt,
         status:"sent",
-        date: dayjs().format('DD/MM/YYYY hh:mm')
+        date: dayjs().format('hh:mm')
       }
       this.contacts[this.indexChat].messages.push(obj);
       this.inputTxt = ""
@@ -106,10 +107,11 @@ var app = new Vue ({
         let obj2 = {
           text: "Va bene!",
           status:"received",
-          date: dayjs().format('DD/MM/YYYY hh:mm')
+          date: dayjs().format('hh:mm')
         }
           this.contacts[this.indexChat].messages.push(obj2);
       }, 3000);
     },
-  }
+  },
+
 })

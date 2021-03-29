@@ -37,11 +37,11 @@
       <!-- cerca -->
       <div class="search flex">
         <button><i class="fas fa-search"></i></button>
-        <input type="text" placeholder="Cerca o inizia una nuova chat">
+        <input type="text" v-model="inputSearch"  placeholder="Cerca o inizia una nuova chat">
       </div>
       <!-- lista contatti -->
       <div class="msg-area">
-        <div class="msg flex" :class="(i == indexChat) ? 'active' : ''" v-for="(info, i) in contacts" @click="cambiaConv(i)">
+        <div class="msg flex" :class="(i == indexChat) ? 'active' : ''" v-if="info.name.toLowerCase().includes(inputSearch.toLowerCase())" v-for="(info, i) in contacts" @click="cambiaConv(i)">
           <div class="left flex">
             <img :src="'./assets/img/avatar' + info.avatar + '.jpg'" :alt="info.name">
             <div class="msg-text">
