@@ -196,9 +196,11 @@ input:focus,
 }
 
 .msg-area > .msg > .right {
+  font-size: 12px;
   height: 100%;
   align-items: flex-start;
 }
+
 
 .content {
   flex-direction: column;
