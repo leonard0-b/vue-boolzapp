@@ -53,7 +53,7 @@ var app = new Vue ({
       	},
       	{
       		name: 'Samuele',
-      		avatar: '_3',
+      		avatar: '_7',
       		visible: true,
       		messages: [
       			{
