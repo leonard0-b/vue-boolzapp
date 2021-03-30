@@ -21,7 +21,7 @@
           <span class="bold white">Leonardo</span>
         </div>
         <div class="cmd">
-          <i class="fas fa-circle-notch"></i>
+          <i class="fas fa-circle-notch"><span class="green"></span></i>
           <i class="fas fa-comment-alt"></i>
           <i class="fas fa-ellipsis-v"></i>
         </div>
@@ -30,13 +30,13 @@
       <div class="notifiche flex">
         <i class="fas fa-bell-slash"></i>
         <div class="notify-text">
-          <p class="white fs20">Ricevi notifiche di nuovi messaggi</p>
-          <a href="#" class="grey underline fs20">Attiva le notifiche desktop</a>
+          <p class="white fs18">Ricevi notifiche di nuovi messaggi</p>
+          <a href="#" class="grey underline fs18">Attiva le notifiche desktop</a>
         </div>
       </div>
       <!-- cerca -->
       <div class="search flex">
-        <button><i class="fas fa-search"></i></button>
+        <button><i class="fas fa-search" v-if="inputSearch == ''"></i><i class="fas fa-arrow-left" v-if="inputSearch != ''"></i></button>
         <input type="text" v-model="inputSearch"  placeholder="Cerca o inizia una nuova chat">
       </div>
       <!-- lista contatti -->
@@ -45,8 +45,8 @@
           <div class="left flex">
             <img :src="'./assets/img/avatar' + info.avatar + '.jpg'" :alt="info.name">
             <div class="msg-text">
-              <p class="white bold fs20 marginb-8">{{ info.name }}</p>
-              <p class="grey fs18">{{info.messages[info.messages.length - 1].text}}</p>
+              <p class="white bold fs18 marginb-8">{{ info.name }}</p>
+              <p class="grey fs13">{{info.messages[info.messages.length - 1].text}}</p>
             </div>
           </div>
           <div class="right">
@@ -76,7 +76,7 @@
       <div class="content flex">
         <div class="box flex" :class="(contacts[indexChat].messages[i].status == 'received') ? 'received' : 'sent'" v-for="(messaggio, i) in contacts[indexChat].messages">
             <i class="fas fa-angle-down" @click="openMenu(i)"></i>
-            <p class="white fs18">{{ contacts[indexChat].messages[i].text }}</p>
+            <p class="white fs15">{{ contacts[indexChat].messages[i].text }}</p>
           <div class="data">
             <p class="grey">{{ contacts[indexChat].messages[i].date }}</p>
           </div>
@@ -85,10 +85,13 @@
             <li @click="deleteMsg(i)">Delete Message</li>
           </ul>
         </div>
+        <div v-if="visible" class="emoji">
+          <img src="./assets/img/emoji.png" alt="emoji">
+        </div>
       </div>
       <!-- area invio messaggio -->
       <div class="message-area flex">
-        <i class="far fa-smile-wink"></i>
+        <i class="far fa-smile-wink" :class="visible ? 'active' : ''" @click="openMenu"></i>
         <input type="text" v-model="inputTxt" @keyup.enter="sendMsg" placeholder="Scrivi un messaggio">
         <i v-if="inputTxt == ''" class="fas fa-microphone"></i>
         <i v-if="inputTxt != ''" class="fas fa-paper-plane" @click="sendMsg"></i>

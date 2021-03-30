@@ -98,12 +98,13 @@ var app = new Vue ({
       console.log(this.cambiaConv);
     },
     sendMsg: function () {
+      const indexBox = this.indexChat;
       let obj = {
         text: this.inputTxt,
         status:"sent",
         date: dayjs().format('hh:mm')
       }
-      this.contacts[this.indexChat].messages.push(obj);
+      this.contacts[indexBox].messages.push(obj);
       this.inputTxt = ""
       setTimeout(() => {
         let obj2 = {
@@ -111,7 +112,7 @@ var app = new Vue ({
           status:"received",
           date: dayjs().format('hh:mm')
         }
-          this.contacts[this.indexChat].messages.push(obj2);
+          this.contacts[indexBox].messages.push(obj2);
       }, 3000);
     },
     openMenu: function (i){
