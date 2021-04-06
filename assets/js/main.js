@@ -92,6 +92,17 @@ var app = new Vue ({
       	},
       ]
     },
+    created: function(){
+      // funzione per spezzettare la data e renderla "digeribile" dal js🐱‍👤
+      this.contacts.forEach((contact, i) => {
+      contact.messages.forEach((message, k) => {
+        let temp = message.date.split(' ')[0];
+        let temp1 = temp.split('/');
+        let newDate = temp1[2] + '-' + temp1[1] + '-' + temp1[0] + ' ' + message.date.split(' ')[1];
+        message.date = newDate;
+      });
+    });
+    },
   methods: {
     cambiaConv: function (i) {
       this.indexChat = i;
@@ -142,6 +153,10 @@ var app = new Vue ({
         this.open = false;
         document.querySelector(".emoji").style.display = "none";
       }
+    },
+    // funzione per visualizzare la data solo ore e minuti🐱‍👤
+    getDate: function (date){
+      return dayjs(date).format('hh:mm')
     }
   },
 })

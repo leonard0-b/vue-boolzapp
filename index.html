@@ -51,7 +51,7 @@
             </div>
           </div>
           <div class="right">
-            <p v-if="info.messages.length" class="grey">{{info.messages[info.messages.length - 1].date}}</p>
+            <p v-if="info.messages.length" class="grey">{{ getDate(info.messages[info.messages.length - 1].date) }}</p>
           </div>
         </div>
       </div>
@@ -64,7 +64,8 @@
           <img :src="'./assets/img/avatar' + contacts[indexChat].avatar + '.jpg'">
           <div class="avatar-text">
             <p class="bold white fs18">{{contacts[indexChat].name}}</p>
-            <p class="grey">Ultimo accesso oggi alle ore 10/01/2020 16:15:22</p>
+            <!-- chiamo la funzione getDate passandole l'ultimo accesso solo con ore e minuti, vado a selezionare il contatto con l'index corrente, l'ultimo messaggio del contatto corrente, quindi la data -->
+            <p class="grey">Ultimo accesso oggi alle ore {{getDate(contacts[indexChat].messages[contacts[indexChat].messages.length - 1].date)}}</p>
           </div>
         </div>
         <div class="cmd">
@@ -79,7 +80,7 @@
             <i class="fas fa-angle-down" @click.stop="openMenu(i)" ></i>
             <p class="white fs15">{{ contacts[indexChat].messages[i].text }}</p>
           <div class="data">
-            <p class="grey">{{ contacts[indexChat].messages[i].date }}</p>
+            <p class="grey">{{ getDate(messaggio.date) }}</p>
           </div>
           <ul v-if="i == indexMsg">
             <li>Message Info</li>
