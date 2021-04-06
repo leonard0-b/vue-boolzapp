@@ -116,8 +116,17 @@ var app = new Vue ({
       }, 3000);
     },
     openMenu: function (i){
-      this.indexMsg = i;
-      console.log(this.indexMsg);
+      // in base alla condizione di renderizzazione
+      // se index è un numero quindi il menu è aperto (cliccando sopra al messaggio prende il suo index)
+      if (this.indexMsg == i) {
+        // cliccando index diventa null quindi il menu non sarà visualizzato
+        this.indexMsg = null;
+      } else {
+        // altrimenti se l'index non è un numero, quindi il messaggio non è stato cliccato
+        // al click l'index diventa i e il menu viene renderizzato
+        this.indexMsg = i;
+        console.log(this.indexMsg);
+      }
     },
     deleteMsg: function (i){
       this.indexMsg = i;
