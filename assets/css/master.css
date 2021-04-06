@@ -370,6 +370,7 @@ input:focus,
   left: 10px;
   padding: 10px;
   border-radius: 10px;
+  display: none;
 }
 
 .emoji > img {

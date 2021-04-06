@@ -85,13 +85,13 @@
             <li @click="deleteMsg(i)">Delete Message</li>
           </ul>
         </div>
-        <div v-if="visible" class="emoji">
+        <div class="emoji">
           <img src="./assets/img/emoji.png" alt="emoji">
         </div>
       </div>
       <!-- area invio messaggio -->
       <div class="message-area flex">
-        <i class="far fa-smile-wink" :class="visible ? 'active' : ''" @click="openMenu"></i>
+        <i class="far fa-smile-wink" @click="emoji"></i>
         <input type="text" v-model="inputTxt" @keyup.enter="sendMsg" placeholder="Scrivi un messaggio">
         <i v-if="inputTxt == ''" class="fas fa-microphone"></i>
         <i v-if="inputTxt != ''" class="fas fa-paper-plane" @click="sendMsg"></i>

@@ -6,6 +6,7 @@ var app = new Vue ({
       inputSearch: "",
       indexMsg: -1,
       visible: false,
+      open: false,
       contacts: [
       	{
       		name: 'Michele',
@@ -124,6 +125,15 @@ var app = new Vue ({
       this.indexMsg = i;
       this.contacts[this.indexChat].messages.splice(i, 1);
       this.indexMsg = -1;
+    },
+    emoji: function (){
+      if (this.open == false) {
+        this.open = true;
+        document.querySelector(".emoji").style.display = "block";
+      } else {
+        this.open = false;
+        document.querySelector(".emoji").style.display = "none";
+      }
     }
   },
 })
