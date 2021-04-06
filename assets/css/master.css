@@ -46,6 +46,10 @@ i {
 .marginb-8 {
   margin-bottom: 8px;
 }
+
+.italic {
+  font-style: italic;
+}
 /* /utilities */
 body {
   justify-content: center;
