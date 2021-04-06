@@ -5,7 +5,6 @@ var app = new Vue ({
       inputTxt: "",
       inputSearch: "",
       indexMsg: null,
-      visible: false,
       open: false,
       contacts: [
       	{
@@ -118,8 +117,7 @@ var app = new Vue ({
     },
     openMenu: function (i){
       this.indexMsg = i;
-      this.visible = !this.visible
-      console.log(this.visible);
+      console.log(this.indexMsg);
     },
     deleteMsg: function (i){
       this.indexMsg = i;

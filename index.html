@@ -81,7 +81,7 @@
           <div class="data">
             <p class="grey">{{ contacts[indexChat].messages[i].date }}</p>
           </div>
-          <ul v-if="visible && i == indexMsg">
+          <ul v-if="i == indexMsg">
             <li>Message Info</li>
             <li @click="deleteMsg(i)">Delete Message</li>
           </ul>
