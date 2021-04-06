@@ -64,7 +64,7 @@
           <img :src="'./assets/img/avatar' + contacts[indexChat].avatar + '.jpg'">
           <div class="avatar-text">
             <p class="bold white fs18">{{contacts[indexChat].name}}</p>
-            <!-- chiamo la funzione getDate passandole l'ultimo accesso solo con ore e minuti, vado a selezionare il contatto con l'index corrente, l'ultimo messaggio del contatto corrente, quindi la data -->
+            <!-- chiamo la funzione getDate per visualizzare l'ultimo accesso solo con ore e minuti passandole il contatto con l'index corrente, l'ultimo messaggio del contatto corrente, quindi la data -->
             <p class="grey">Ultimo accesso oggi alle ore {{getDate(contacts[indexChat].messages[contacts[indexChat].messages.length - 1].date)}}</p>
           </div>
         </div>
