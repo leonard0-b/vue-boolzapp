@@ -6,6 +6,8 @@ var app = new Vue ({
       inputSearch: "",
       indexMsg: null,
       open: false,
+      conversazioni: "show",
+      chat: "",
       contacts: [
       	{
       		name: 'Michele',
@@ -106,6 +108,8 @@ var app = new Vue ({
   methods: {
     cambiaConv: function (i) {
       this.indexChat = i;
+      this.conversazioni = "";
+      this.chat = "show";
       console.log(this.cambiaConv);
     },
     sendMsg: function () {
@@ -157,6 +161,10 @@ var app = new Vue ({
     // funzione per visualizzare la data solo ore e minuti🐱‍👤
     getDate: function (date){
       return dayjs(date).format('hh:mm')
+    },
+    returnConv: function (){
+      this.conversazioni = "show";
+      this.chat = "";
     }
   },
 })

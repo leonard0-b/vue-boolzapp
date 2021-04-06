@@ -13,7 +13,7 @@
 <body class="flex">
   <div id="root" class="flex" @click="openMenu">
     <!-- parte sinistra -->
-    <div class="side-left">
+    <div class="side-left conversazioni" :class="conversazioni">
       <!-- nav-left -->
       <div class="nav flex">
         <div class="avatar flex">
@@ -41,12 +41,12 @@
       </div>
       <!-- lista contatti -->
       <div class="msg-area">
-        <div class="msg flex" :class="(i == indexChat) ? 'active' : ''" v-if="info.name.toLowerCase().includes(inputSearch.toLowerCase())" v-for="(info, i) in contacts" @click="cambiaConv(i)">
+        <div v-for="(info, i) in contacts" class="msg flex" :class="(i == indexChat) ? 'active' : ''" v-if="info.name.toLowerCase().includes(inputSearch.toLowerCase())" @click="cambiaConv(i)">
           <div class="left flex">
             <img :src="'./assets/img/avatar' + info.avatar + '.jpg'" :alt="info.name">
             <div class="msg-text">
               <p class="white bold fs18 marginb-8">{{ info.name }}</p>
-              <p v-if="info.messages.length" class="grey fs13">{{info.messages[info.messages.length - 1].text}}</p>
+              <p v-if="info.messages.length" class="grey fs13 dots">{{info.messages[info.messages.length - 1].text}}</p>
               <p class="grey italic fs13" v-else>Non ci sono messaggi</p>
             </div>
           </div>
@@ -57,15 +57,16 @@
       </div>
     </div>
     <!-- parte destra -->
-    <div class="side-right flex">
+    <div class="side-right flex chat" :class="chat">
       <!-- nav-right -->
       <div class="nav flex">
         <div class="avatar flex">
+          <i class="fas fa-arrow-left" @click="returnConv"></i>
           <img :src="'./assets/img/avatar' + contacts[indexChat].avatar + '.jpg'">
           <div class="avatar-text">
             <p class="bold white fs18">{{contacts[indexChat].name}}</p>
             <!-- chiamo la funzione getDate per visualizzare l'ultimo accesso solo con ore e minuti passandole il contatto con l'index corrente, l'ultimo messaggio del contatto corrente, quindi la data -->
-            <p v-if="contacts[indexChat].messages.length" class="grey">Ultimo accesso oggi alle ore {{getDate(contacts[indexChat].messages[contacts[indexChat].messages.length - 1].date)}}</p>
+            <p v-if="contacts[indexChat].messages.length" class="grey dots">Ultimo accesso oggi alle ore {{getDate(contacts[indexChat].messages[contacts[indexChat].messages.length - 1].date)}}</p>
           </div>
         </div>
         <div class="cmd">
@@ -93,7 +94,7 @@
       </div>
       <!-- area invio messaggio -->
       <div class="message-area flex">
-        <i class="far fa-smile-wink" @click="emoji"></i>
+        <i class="far fa-smile-wink" :class="(open == true) ? 'active' : ''" @click="emoji"></i>
         <input type="text" v-model="inputTxt" @keyup.enter="sendMsg" placeholder="Scrivi un messaggio">
         <i v-if="inputTxt == ''" class="fas fa-microphone"></i>
         <i v-if="inputTxt != ''" class="fas fa-paper-plane" @click="sendMsg"></i>
