@@ -4,7 +4,7 @@ var app = new Vue ({
       indexChat: 0,
       inputTxt: "",
       inputSearch: "",
-      indexMsg: -1,
+      indexMsg: null,
       visible: false,
       open: false,
       contacts: [
@@ -124,7 +124,7 @@ var app = new Vue ({
     deleteMsg: function (i){
       this.indexMsg = i;
       this.contacts[this.indexChat].messages.splice(i, 1);
-      this.indexMsg = -1;
+      this.indexMsg = null;
     },
     emoji: function (){
       if (this.open == false) {
