@@ -50,6 +50,10 @@ i {
 .italic {
   font-style: italic;
 }
+
+.word-break {
+  word-break: break-all;
+}
 /* /utilities */
 body {
   justify-content: center;

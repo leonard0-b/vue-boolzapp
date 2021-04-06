@@ -75,7 +75,7 @@
       </div>
       <!-- area messaggi -->
       <div class="content flex">
-        <div class="box flex" :class="(contacts[indexChat].messages[i].status == 'received') ? 'received' : 'sent'" v-for="(messaggio, i) in contacts[indexChat].messages">
+        <div class="box flex word-break" :class="(contacts[indexChat].messages[i].status == 'received') ? 'received' : 'sent'" v-for="(messaggio, i) in contacts[indexChat].messages">
             <i class="fas fa-angle-down" @click.stop="openMenu(i)" ></i>
             <p class="white fs15">{{ contacts[indexChat].messages[i].text }}</p>
           <div class="data">
