@@ -108,6 +108,8 @@ var app = new Vue ({
   methods: {
     cambiaConv: function (i) {
       this.indexChat = i;
+      // in questo modo cambio schermata nella versione mobile🐱‍👤
+      // al click sulla conversazione la parte destra prende la classe del css "show", mentre la sinistra la perde🐱‍👤
       this.conversazioni = "";
       this.chat = "show";
       console.log(this.cambiaConv);
@@ -163,6 +165,8 @@ var app = new Vue ({
       return dayjs(date).format('hh:mm')
     },
     returnConv: function (){
+      // in questo modo cambio schermata nella versione mobile🐱‍👤
+      // al click sulla freccia indietro la parte sinistra prende la classe del css "show", mentre la destra la perde🐱‍👤
       this.conversazioni = "show";
       this.chat = "";
     }
